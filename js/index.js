@@ -44,17 +44,10 @@ window.addEventListener("load", () => {
     ctx.moveTo(e.clientX, e.clientY);
   }
 
-  if (
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent
-    )
-  ) {
-    canvas.addEventListener("touchstart", startPosition);
-    canvas.addEventListener("touchend", finishedPosition);
-    canvas.addEventListener("touchmove", draw);
-  } else {
-    canvas.addEventListener("mousedown", startPosition);
-    canvas.addEventListener("mouseup", finishedPosition);
-    canvas.addEventListener("mousemove", draw);
-  }
+  canvas.addEventListener("touchstart", startPosition);
+  canvas.addEventListener("touchend", finishedPosition);
+  canvas.addEventListener("touchmove", draw);
+  canvas.addEventListener("mousedown", startPosition);
+  canvas.addEventListener("mouseup", finishedPosition);
+  canvas.addEventListener("mousemove", draw);
 });
